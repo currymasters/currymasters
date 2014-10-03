@@ -1,0 +1,404 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Curry Masters</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/order.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script>
+</head> 
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header">  	
+		<h1>Shopkeeper Order Form</h1>
+        <a href="index.html" rel="external">Back</a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<div class="order-thankyou" style="display: none;">
+			Thank you.  Your order has been sent.  We will get back to you as soon as we can.
+		</div>
+		<div class="order-form">
+			<p class="mandatory">* indicates Manadatory Field</p>
+			<div data-role="fieldcontain" class="text-field">
+				<label for="shopname">Shop Name*:</label>
+				<input type="text" name="shopname" value="" placeholder="Please enter your shop name" class="required" id="shopname" />
+                <span class="form_error" id="invalid_shopname">This shop name is not valid</span>
+			</div>
+			<div data-role="fieldcontain" class="text-field">
+				<label for="abn">ABN*:</label>
+				<input type="text" name="abn" value="" placeholder="Please enter your abn number" id="abn" class="number" />
+                <span class="form_error" id="invalid_abn">This abn is not valid</span>
+			</div>
+            <div data-role="fieldcontain" class="text-field">
+				<label for="email">Email*:</label>
+				<input type="email" name="email" value="" placeholder="Please enter your email" class="required" id="email"  />
+                <span class="form_error" id="invalid_email">This email is not valid</span>
+			</div>
+			<div data-role="fieldcontain" class="text-field">
+				<label for="mobilephone">Mobile*:</label>
+				<input type="number" name="mobilephone" value="" placeholder="Please enter your mobile number" id="mobilephone" class="number" />
+                <span class="form_error" id="invalid_mobilephone">This mobile number is not valid</span>
+			</div>
+            <div data-role="fieldcontain" class="text-field">
+				<label for="phone">Landline:</label>
+				<input type="number" name="phone" value="" placeholder="" id="phone" class="number"/>
+			</div>
+            <div data-role="fieldcontain">
+				<label for="address">Address*:</label>
+				<textarea name="address" id="address" placeholder="Please enter your address" class="required"></textarea>
+                <span class="form_error" id="invalid_address">This address is not valid</span>
+			</div>
+			<div data-role="fieldcontain">
+				<label for="state">State:*</label>
+					<select name="state" class="required" id="state">
+						<option value="" data-placeholder="true">Please select your state</option>
+						<option value="ACT">ACT</option>
+						<option value="NSW">NSW</option>
+						<option value="NT">NT</option>
+						<option value="QLD">QLD</option>
+						<option value="SA">SA</option>
+						<option value="TAS">TAS</option>
+						<option value="VIC">VIC</option>
+						<option value="WA">WA</option>
+					</select>
+			</div>
+			<div data-role="fieldcontain">
+				<label for="message">Message*:</label>
+				<textarea name="message" id="message" placeholder="" class="required"></textarea>
+			</div>
+            
+
+     <div data-role="fieldcontain">
+                  <table>
+                    <tr>
+                      	<td><b>Product Name</b></td>
+                      	<td><b>Box(85g)</b></td>
+                      	<td><b>Per Kg</b></td>
+                    </tr>
+                    <tr>
+                      	<td>Tandoori Masala</td>
+                      	<td><input type="number" name="TandooriMasala" id="tandooriMasala" placeholder="" value="" class="number" /></td>
+                      	<td><input type="number" name="TandooriMasalakg" id="TandooriMasalakg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Mint Chutney</td>
+                        <td><input type="number" name="MintChutney" id="MintChutney" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="MintChutneykg" id="MintChutneykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                		<td>Biryani Masala</td>
+                        <td><input type="number" name="BiryaniMasala" id="BiryaniMasala" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="BiryaniMasalakg" id="BiryaniMasalakg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Chicken Korma</td>
+                        <td><input type="number" name="ChickenKorma" id="ChickenKorma" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="ChickenKormakg" id="ChickenKormakg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                  	<tr>
+                    	<td>Mix Vegetable</td>
+                        <td><input type="number" name="MixVegetable" id="MixVegetable" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="MixVegetablekg" id="MixVegetablekg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Fish Goa</td>
+                        <td><input type="number" name="FishGoa" id="FishGoa" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="FishGoakg" id="FishGoakg" placeholder="" value="" class="number" /></td>
+                   	</tr>
+                	<tr>
+                    	<td>Rogan Josh</td>
+                        <td><input type="number" name="RoganJosh" id="RoganJosh" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="RoganJoshkg" id="RoganJoshkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Butter Chicken</td>
+                        <td><input type="number" name="ButterChicken" id="ButterChicken" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="ButterChickenkg" id="ButterChickenkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Vindaloo Curry</td>
+                        <td><input type="number" name="VindalooCurry" id="VindalooCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="VindalooCurrykg" id="VindalooCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Chicken Tikka Masala</td>
+                        <td><input type="number" name="ChickenTikkaMasala" id="ChickenTikkaMasala" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="ChickenTikkaMasalakg" id="ChickenTikkaMasalakg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Chicken Delhi</td>
+                        <td><input type="number" name="ChickenDelhi" id="ChickenDelhi" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="ChickenDelhikg" id="ChickenDelhikg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>White Korma</td>
+                        <td><input type="number" name="WhiteKorma" id="WhiteKorma" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="WhiteKormakg" id="WhiteKormakg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr><td>Saag Gosht</td>
+                    	<td><input type="number" name="SaagGosht" id="SaagGosht" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="SaagGoshtkg" id="SaagGoshtkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Shahi Paneer</td>
+                        <td><input type="number" name="ShahiPaneer" id="ShahiPaneer" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="ShahiPaneerkg" id="ShahiPaneerkg" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Prawn Curry</td>
+                        <td><input type="number" name="PrawnCurry" id="PrawnCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="PrawnCurrykg" id="PrawnCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Hydrabadi Biryani</td>
+                        <td><input type="number" name="HydrabadiBiryani" id="HydrabadiBiryani" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="HydrabadiBiryanikg" id="HydrabadiBiryanikg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Chicken 65</td>
+                        <td><input type="number" name="Chicken65" id="Chicken65" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="Chicken65kg" id="Chicken65kg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Amritsari Fish</td>
+                        <td><input type="number" name="AmritsariFish" id="AmritsariFish" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="AmritsariFishkg" id="AmritsariFishkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Lamb Korma</td>
+                        <td><input type="number" name="LambKorma" id="LambKorma" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="LambKormakg" id="LambKormakg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Madras Curry</td>
+                        <td><input type="number" name="MardesCurry" id="MardesCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="MardesCurrykg" id="MardesCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Kashmiri Chicken</td>
+                        <td><input type="number" name="KashmiriChicken" id="KashmiriChicken" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="KashmiriChickenkg" id="KashmiriChickenkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Goat Meat Curry</td>
+                        <td><input type="number" name="GoatMeatCurry" id="GoatMeatCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="GoatMeatCurrykg" id="GoatMeatCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Balti Chicken</td>
+                        <td><input type="number" name="BaltiChicken" id="BaltiChicken" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="BaltiChickenkg" id="BaltiChickenkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Nawabi Chicken</td>
+                        <td><input type="number" name="NawabiChicken" id="NawabiChicken" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="NawabiChickenkg" id="NawabiChickenkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Tawa Fry Veggie</td>
+                        <td><input type="number" name="TawaFryVeggie" id="TawaFryVeggie" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="TawaFryVeggiekg" id="TawaFryVeggiekg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Achar Gosht</td>
+                        <td><input type="number" name="AcharGosht" id="AcharGosht" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="AcharGoshtkg" id="AcharGoshtkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Kadai Chicken</td>
+                        <td><input type="number" name="KadaiChicken" id="KadaiChicken" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="KadaiChickenkg" id="KadaiChickenkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Nizami Keema</td>
+                        <td><input type="number" name="NizamiKeema" id="NizamiKeema" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="NizamiKeemakg" id="NizamiKeemakg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Chicken Jalfrezi</td>
+                        <td><input type="number" name="ChickenJalfrezi" id="ChickenJalfrezi" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="ChickenJalfrezikg" id="ChickenJalfrezikg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Chicken Chill</td>
+                        <td><input type="number" name="ChickenChill" id="ChickenChill" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="ChickenChillkg" id="ChickenChillkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Aloo Gobhi</td>
+                        <td><input type="number" name="AlooGobhi" id="AlooGobhi" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="AlooGobhikg" id="AlooGobhikg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Thai Green Curry</td>
+                        <td><input type="number" name="ThaiGreenCurry" id="ThaiGreenCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="ThaiGreenCurrykg" id="ThaiGreenCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Mutter Paneer</td>
+                        <td><input type="number" name="MutterPaneer" id="MutterPaneer" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="MutterPaneerkg" id="MutterPaneerkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Palak Paneer</td>
+                        <td><input type="number" name="PalakPaneer" id="PalakPaneer" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="PalakPaneerkg" id="PalakPaneerkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Food Colour Ask Us</td>
+                        <td><input type="number" name="FoodColourAskUs" id="FoodColourAskUs" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="FoodColourAskUskg" id="FoodColourAskUskg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Daal Makhani</td>
+                        <td><input type="number" name="DaalMakhani" id="DaalMakhani" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="DaalMakhanikg" id="DaalMakhanikg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Jungle Curry</td>
+                        <td><input type="number" name="JungleCurry" id="JungleCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="JungleCurrykg" id="JungleCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Massaman Curry</td>
+                        <td><input type="number" name="MassamanCurry" id="MassamanCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="MassamanCurrykg" id="MassamanCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Red Curry</td>
+                        <td><input type="number" name="RedCurry" id="RedCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="RedCurrykg" id="RedCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Mango Chicken</td>
+                        <td><input type="number" name="MangoChicken" id="MangoChicken" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="MangoChickenkg" id="MangoChickenkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Chicken Chettinad</td>
+                        <td><input type="number" name="ChickenChettinad" id="ChickenChettinad" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="ChickenChettinadkg" id="ChickenChettinadkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Lamb Dhanksak</td>
+                        <td><input type="number" name="LambDhanksak" id="LambDhanksak" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="LambDhanksakkg" id="LambDhanksakkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>	
+                    	<td>Rajma Curry</td>
+                        <td><input type="number" name="RajmaCurry" id="RajmaCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="RajmaCurrykg" id="RajmaCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Lamb Curry</td>
+                        <td><input type="number" name="LambCurry" id="LambCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="LambCurrykg" id="LambCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Chicken Curry</td>
+                        <td><input type="number" name="ChickenCurry" id="ChickenCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="ChickenCurrykg" id="ChickenCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Lamb Shank</td>
+                        <td><input type="number" name="LambShank" id="LambShank" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="LambShankkg" id="LambShankkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Fish Curry</td>
+                        <td><input type="number" name="FishCurry" id="FishCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="FishCurrykg" id="FishCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Singapore Fish Head Curry</td>
+                        <td><input type="number" name="SingaporeFishHeadCurry" id="SingaporeFishHeadCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="SingaporeFishHeadCurrykg" id="SingaporeFishHeadCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Singapore Chilli Crab</td>
+                        <td><input type="number" name="SingaporeChilliCrab" id="SingaporeChilliCrab" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="SingaporeChilliCrabkg" id="SingaporeChilliCrabkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Rendang Curry</td>
+                        <td><input type="number" name="Rendang" id="Rendang" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="Rendangkg" id="Rendangkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Panang Curry</td>
+                        <td><input type="number" name="Panang" id="Panang" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="Panangkg" id="Panangkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Durban Bunny Chow Curry</td>
+                        <td><input type="number" name="DurbanBunnyChowCurry" id="DurbanBunnyChowCurry" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="DurbanBunnyChowCurrykg" id="DurbanBunnyChowCurrykg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Peri Peri Seasoning</td>
+                        <td><input type="number" name="PeriPeri" id="PeriPeri" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="PeriPerikg" id="PeriPerikg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Harissa Seasoning</td>
+                        <td><input type="number" name="Harissa" id="Harissa" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="Harissakg" id="Harissakg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Cajun Seasoning</td>
+                        <td><input type="number" name="Cajun" id="Cajun" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="Cajunkg" id="Cajunkg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Chipotle Seasoning</td>
+                        <td><input type="number" name="Chipotle" id="Chipotle" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="Chipotlekg" id="Chipotlekg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Fried Rice Seasoning</td>
+                        <td><input type="number" name="FriedRice" id="FriedRice" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="FriedRicekg" id="FriedRicekg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Moroccan Seasoning</td>
+                        <td><input type="number" name="Moroccan" id="Moroccan" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="Moroccankg" id="Moroccankg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Paella Seasoning</td>
+                        <td><input type="number" name="Paella" id="Paella" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="Paellakg" id="Paellakg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                	<tr>
+                    	<td>Portugese Seasoning</td>
+                        <td><input type="number" name="Portugese" id="Portugese" placeholder="" value="" class="number" /></td>
+                        <td><input type="number" name="Portugesekg" id="Portugesekg" placeholder="" value="" class="number" /></td>
+                    </tr>
+                  </table>               
+          </div>    
+
+
+
+
+
+
+            
+			<div class="send"><a href="javascript:;" data-role="button" data-theme="a" data-iconpos="right" id="order-now">Order Now</a></div>
+		</div><!-- //.order-form -->
+	</div><!-- /content -->
+
+	<div data-role="footer">
+	
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<script src="js/order.js"></script>
+
+</body>
+</html>

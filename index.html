@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Curry Masters</title>
+	<link rel="stylesheet"  href="css/jquery.mobile.min.css">
+	<style>
+		#homeBanner {
+			width: 100%;
+		}
+		.center {
+			text-align: center;
+			margin-left: auto;
+			margin-right:auto;
+		}
+		.banner {
+			display:block;
+			width: 100%;
+		}
+		#qrcode {
+			display:block;	
+			margin-left: auto;
+			margin-right:auto;
+		}
+		#map2 {
+			margin-left: auto;
+			margin-right:auto;
+			width: 320px;
+			height: 320px;  
+		}
+	</style>
+	<link rel="stylesheet" href="css/leaflet.css" />
+    <!--<link rel="stylesheet" href="css/order.css" />-->
+	<script src="js/jquery.js"></script>
+	<script src="js/map.js"></script>
+	<script src="js/jquery.mobile.min.js"></script>
+	<script src="js/leaflet.js"></script>
+    <script src="js/order.js"></script>
+	<script src="js/app.js"></script>
+	<script src="phonegap.js"></script>
+	<script src="barcodescanner.js"></script>
+
+
+    <meta id="viewport" name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="js/includes/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" />
+    <link rel="stylesheet" type="text/css" href="js/includes/sortable_gallery.css" />
+    <script type="text/javascript" src="js/includes/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/includes/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js"></script>
+    <script type="text/javascript" src="js/includes/sortable_gallery.js"></script>
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <link rel="stylesheet" type="text/css" href="js/includes/sortable_gallery_ie.css" />
+    <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+	
+<body>
+<div id="homeScreen" data-role="page">
+	<img src="imgs/CurryMasters_banner_1.png" class="banner" />
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" class="ui-nodisc-icon ui-alt-icon">
+			<li><a href="#products">Products</a></li>
+			<li><a href="order.html" rel="external">Shopkeeper Order</a></li>
+			<li><a href="#discoverScreen">[ Discover ]</a></li>
+		</ul>
+		<div class="ui-grid-a center">
+    		<div class="ui-block-a">
+				<a href="#aboutScreen" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-inline ui-nodisc-icon ui-alt-icon">Info</a>
+			</div>
+    		<div class="ui-block-b">
+				<a href="#mapScreen" class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-notext ui-btn-inline ui-nodisc-icon ui-alt-icon">Map</a>
+			</div>
+		</div>
+	</div>
+        <div data-role="footer">
+		<h4><a href="tel://0419438922" title="Give us Call" data-role="button" data-icon="grid">Contact Us!</a></h4>
+	</div>
+</div>
+
+
+<div id="products" data-role="page">
+  <header data-role="header" data-position="fixed" data-id="appHeader">
+      <h1>Curry Masters</h1>
+      <a href="#homeScreen" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-btn-left ui-nodisc-icon ui-alt-icon">Back</a>
+  </header>
+  <div data-role="content">
+        <img src="js/images/background.jpg" class="background ui-page ui-page-theme-a ui-page-header-fixed ui-page-active" />
+                
+		<div class="title"></div>
+        
+        <div class="gallery">
+        	<div class="sorting">
+            	<div>
+                	<span>Filter products by</span>
+                    <a class="sortLink selected" data-keyword="all" href="#">All products</a>
+                    <a class="sortLink" data-keyword="1" href="#">Complete_Curry_Mix</a>
+                    <a class="sortLink" data-keyword="2" href="#">Seasoning_Mix</a>
+                    <div class="clear_both"></div>
+                </div>
+            </div>
+            <div class="photos">
+
+            		<div id="thumbnail_container" class="thumbnail_container">
+                    
+<!--                    	<a class="thumbnail" title="This is a caption for the product_fullsize.jpg" href="photos/product_fullsize.jpg" data-keywords="completecurrymix">
+                        <img src="photos/product_thumbnail.jpg" /></a>-->
+                    
+                    </div>            
+            </div>
+        </div>
+		
+		<!--        
+		<div class="debug-size" style="position:absolute; bottom:0px; left:5px;">debug size</div>
+        <div class="debug-remainder" style="position:absolute; bottom:25px; left:5px;">debug remainder</div>
+        -->
+        
+
+
+  </div>
+  <div data-role="footer">
+	<h4><a href="tel://0419438922" title="Give us Call" data-role="button" data-icon="grid">Contact Us!</a></h4>
+  </div>
+</div>
+
+
+  
+
+
+<div id="mapScreen" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>Curry Masters</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-btn-left ui-nodisc-icon ui-alt-icon">Back</a>
+	</header>
+	<div data-role="content">
+		<h2 class="center">Curry Masters</h2>
+		<p class="center">9/18 Leighton Place, Hornsby, NSW 2077 <br>Inquiry Hours: Monday to Friday 9.30am to 4.30pm<br>Landline: (02) 99872822 <br>Mobile: 0419438922 </p>
+		<div id="map2"><img src="imgs/map.png" /></div>
+	</div>
+    <div data-role="footer">
+		<h4><a href="tel://0419438922" title="Give us Call" data-role="button" data-icon="grid">Contact Us!</a></h4>
+	</div>
+</div>
+
+<div id="discoverScreen" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>Curry Masters</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-btn-left ui-nodisc-icon ui-alt-icon">Back</a>
+	</header>
+	<div data-role="content">
+		<img id="qrcode" src="imgs/qr.png" />
+		<h3 class="center">Discover More Exciting Stories</h3>
+		<p class="center">Any time you see this QR code, scan it using the Discover button to see additional content from CurryMasters.</p>
+		<a id="qrScanBtn" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">Discover</a>
+	</div>
+    <div data-role="footer">
+		<h4><a href="tel://0419438922" title="Give us Call" data-role="button" data-icon="grid">Contact Us!</a></h4>
+	</div>
+</div>
+
+<div id="aboutScreen" data-role="page">
+	<header data-role="header" data-position="fixed" data-id="appHeader">
+		<h1>Curry Masters</h1>
+		<a href="#homeScreen" class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-btn-left ui-nodisc-icon ui-alt-icon">Back</a>
+	</header>
+	<div data-role="content">
+		<h2 class="center">Curry Masters</h2>
+		<h3 class="center">It's so easy</h3>
+		<img class="center banner" src="imgs/Museum.png" />
+		<p class="center">Australian Product.</p>
+
+		<p class="center">CurryMasters bring the flavour of fresh spices.</p>
+
+		<p class="center">Our collections are Complete Curry Mix and Seasoning Mix</p>
+		<p class="center">9/18 Leighton Place, Hornsby, NSW 2077 <br>Inquiry Hours: Monday to Friday 9.30am to 4.30pm<br>Landline: (02) 99872822 <br>Mobile: 0419438922</p>
+	</div>
+    <div data-role="footer">
+		<h4><a href="tel://0419438922" title="Give us Call" data-role="button" data-icon="grid">Contact Us!</a></h4>
+	</div>
+</div>
+
+
+	
+	<script src="js/products.js"></script>
+	<script src="http://www.currymasters.com.au/currymastersWS/readJSONp/products.php?jsoncallback=processJSON&format=json"></script>
+</body>
+</html>
